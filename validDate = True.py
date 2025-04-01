@@ -28,6 +28,9 @@ year = int(input("Enter year: "))
 month = int(input("Enter month: "))
 day = int(input("Enter day: "))
 
+# Adjust February days for leap year check
+adjust_february(year)
+
 # Check if year, month, and day are valid
 validDate = True
 
@@ -37,9 +40,6 @@ elif month < MIN_MONTH or month > MAX_MONTH:  # invalid month
     validDate = False
 elif day < MIN_DAY or day > days_in_month.get(month, 31):  # invalid day
     validDate = False
-
-# Adjust February days for leap year check
-adjust_february(year)
 
 # Output result
 if validDate:
